@@ -15,9 +15,9 @@ viveEnUnLoft(julian, 2000).
 
 viveEnPropiedadesCopadas(Personas):- (viveEnUnaCasa(Personas, MetrosCuadrados), MetrosCuadrados>100)
 viveEnPropiedadesCopadas(Personas):- (viveEnUnDepartamento(Personas, Ambientes, Banios), Ambientes>3).
-viveEnPropiedadesCopadas(Personas):- viveEnUnDepartamento(Personas, Ambientes, Banios>1).
-viveEnPropiedadesCopadas(Personas):- viveEnUnLoft(Personas, Anio>2015).
+viveEnPropiedadesCopadas(Personas):- (viveEnUnDepartamento(Personas, Ambientes, Banios), Banios>1).
+viveEnPropiedadesCopadas(Personas):- (viveEnUnLoft(Personas, Anio), Anio>2015).
 
-barrioCopado(Barrio):- viveEnUnaCasa(Personas, MetrosCuadrados >100) , viveEnUnDepartamento(Personas, Ambientes>3, Banios).
+barrioCopado(Barrio):- (viveEnUnaCasa(Personas, MetrosCuadrados), MetrosCuadrados>100) , (viveEnUnDepartamento(Personas, Ambientes, Banios), Ambientes>3).
 
 barrioCaro(Barrio):- 
