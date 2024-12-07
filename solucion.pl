@@ -18,6 +18,7 @@ valeLaCasa(alf, 75000).
 valeLaCasa(julian, 140000).
 valeLaCasa(vale, 95000).
 valeLaCasa(fer, 60000).
+plata(250000).
 
 viveEnPropiedadesCopadas(Personas):- (viveEnUnaCasa(Personas, MetrosCuadrados), MetrosCuadrados>100).
 viveEnPropiedadesCopadas(Personas):- (viveEnUnDepartamento(Personas, Ambientes, Banios), Ambientes>3).
@@ -33,4 +34,4 @@ barrioCaro(Barrio):-not(barato(Casa)).
 
 comprarPropiedad(_):- (plata(_)).
 plata(_).
-laPlataQueNosQueda(Total):- (valeLaCasa(Personas, Valor), plata(_)-Valor).
+laPlataQueNosQueda(Total):- (valeLaCasa(Personas, Valor)), (plata(_) - Valor).
