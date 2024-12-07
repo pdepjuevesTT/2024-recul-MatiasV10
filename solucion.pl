@@ -1,4 +1,3 @@
-% Solución en Prolog
 viveEnElBarrioDe(alf, almagro).
 viveEnElBarrioDe(juan, almagro).
 viveEnElBarrioDe(nico, almagro).
@@ -20,4 +19,8 @@ viveEnPropiedadesCopadas(Personas):- (viveEnUnLoft(Personas, Anio), Anio>2015).
 
 barrioCopado(Barrio):- (viveEnUnaCasa(Personas, MetrosCuadrados), MetrosCuadrados>100) , (viveEnUnDepartamento(Personas, Ambientes, Banios), Ambientes>3).
 
-barrioCaro(Barrio):- 
+barrioCaro(Barrio):- not (barato(Casa)).
+
+                    barato(Casa):- (viveEnUnLoft(Personas, Anios), Anios<2005).
+                    barato(Casa):- (viveEnUnCasa(Personas, MetrosCuadrados), MetrosCuadrados<90).
+                    barato(Casa):- (viveEnUnDepartamento(Personas, Ambientes, Banios), Ambientes<3).
