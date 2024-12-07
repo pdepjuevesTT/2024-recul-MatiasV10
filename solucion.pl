@@ -20,10 +20,10 @@ valeLaCasa(vale, 95000).
 valeLaCasa(fer, 60000).
 plata(250000).
 
-viveEnPropiedadesCopadas(Personas):- (viveEnUnaCasa(Personas, MetrosCuadrados), MetrosCuadrados>100).
-viveEnPropiedadesCopadas(Personas):- (viveEnUnDepartamento(Personas, Ambientes, Banios), Ambientes>3).
-viveEnPropiedadesCopadas(Personas):- (viveEnUnDepartamento(Personas, Ambientes, Banios), Banios>1).
-viveEnPropiedadesCopadas(Personas):- (viveEnUnLoft(Personas, Anio), Anio>2015).
+viveEnPropiedadesCopadas(Personas):- forall(viveEnUnaCasa(Personas, MetrosCuadrados), MetrosCuadrados>100).
+viveEnPropiedadesCopadas(Personas):- forall(viveEnUnDepartamento(Personas, Ambientes, Banios), Ambientes>3).
+viveEnPropiedadesCopadas(Personas):- forall(viveEnUnDepartamento(Personas, Ambientes, Banios), Banios>1).
+viveEnPropiedadesCopadas(Personas):- forall(viveEnUnLoft(Personas, Anio), Anio>2015).
 
 barrioCopado(Barrio):- (viveEnUnaCasa(Personas, MetrosCuadrados), MetrosCuadrados>100) , (viveEnUnDepartamento(Personas, Ambientes, Banios), Ambientes>3).
 
