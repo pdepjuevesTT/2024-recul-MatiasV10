@@ -30,3 +30,7 @@ barrioCaro(Barrio):-not(barato(Casa)).
                     barato(Casa):- (viveEnUnLoft(_, Anios), Anios<2005).
                     barato(Casa):- (viveEnUnaCasa(_, MetrosCuadrados), MetrosCuadrados<90).
                     barato(Casa):- (viveEnUnDepartamento(_, Ambientes, _), Ambientes<3).
+
+comprarPropiedad(_):- (plata(_)).
+plata(_).
+laPlataQueNosQueda(Total):- (valeLaCasa(Personas, Valor), plata(_)-Valor).
